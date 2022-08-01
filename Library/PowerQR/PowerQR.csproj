@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>PowerQR</RootNamespace>
+	  
+	<Author>Thev2Andy</Author>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<DocumentationFile>..\PowerQR\PowerQR\XML Docs\PowerQR XML.xml</DocumentationFile>
+  
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+</Project>

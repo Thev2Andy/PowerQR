@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PowerQR</name>
+    </assembly>
+    <members>
+        <member name="T:PowerQR.Color">
+            <summary>
+            A RGBA color structute.
+            </summary>
+        </member>
+        <member name="M:PowerQR.Color.#ctor(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Initializes an instace of the <c>Color</c> struct with the appropiate values.
+            </summary>
+            <param name="R">The R channel.</param>
+            <param name="G">The G channel.</param>
+            <param name="B">The B channel.</param>
+            <param name="A">The A channel.</param>
+        </member>
+        <member name="T:PowerQR.Image">
+            <summary>
+            A custom image class.
+            </summary>
+        </member>
+        <member name="M:PowerQR.Image.Set(System.Numerics.Vector2,System.Byte)">
+            <summary>
+            Sets a byte into a pixel at a specified XY location.
+            </summary>
+            <param name="Location">The location of the pixel.</param>
+            <param name="Byte">The byte to set.</param>
+        </member>
+        <member name="M:PowerQR.Image.Resize(System.Numerics.Vector2)">
+            <summary>
+            A RGBA color class.
+            </summary>
+            <param name="Size">The new size of the image.</param>
+            <exception cref="T:System.ArgumentException">Image size is set to a number less than or equal to 0.</exception>
+        </member>
+        <member name="M:PowerQR.Image.Clear">
+            <summary>
+            Clears the image.
+            </summary>
+        </member>
+        <member name="M:PowerQR.Image.#ctor(System.Numerics.Vector2)">
+            <summary>
+            Initializes a new instance of the <c>Image</c> class of the appropiate size.
+            </summary>
+            <param name="Size"></param>
+            <exception cref="T:System.ArgumentException">Image size is set to a number less than or equal to 0.</exception>
+        </member>
+        <member name="T:PowerQR.Pixel">
+            <summary>
+            A pixel struct.
+            </summary>
+        </member>
+        <member name="M:PowerQR.Pixel.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <c>Pixel</c> struct.
+            </summary>
+            <param name="Byte">The byte value of the pixel.</param>
+        </member>
+        <member name="T:PowerQR.QR">
+            <summary>
+            The class used to read and write QR codes.
+            </summary>
+        </member>
+        <member name="M:PowerQR.QR.Generate(System.Byte[])">
+            <summary>
+            Generates an image from a byte array.
+            </summary>
+            <param name="Bytes">The target byte array.</param>
+            <returns>The generated image.</returns>
+        </member>
+        <member name="M:PowerQR.QR.Read(PowerQR.Image,System.Boolean)">
+            <summary>
+            Reads a QR code from the specified image.
+            </summary>
+            <param name="Image">The target image.</param>
+            <param name="StripTrailingNullBytes">Determines if the trailing null bytes are removed, this can yield a file artificially bigger (by a few bytes, depends on the file size) if disabled, but can (in rare occasions) corrupt files if enabled.</param>
+            <returns>The read byte array.</returns>
+        </member>
+    </members>
+</doc>
