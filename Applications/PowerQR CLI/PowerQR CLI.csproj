@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <Reference Include="PowerCMD">
-      <HintPath>DLLs\PowerCMD\PowerCMD.dll</HintPath>
+      <HintPath>Libraries\PowerCMD\PowerCMD.dll</HintPath>
     </Reference>
   </ItemGroup>
 
