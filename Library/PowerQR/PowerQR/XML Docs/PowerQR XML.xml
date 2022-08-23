@@ -77,7 +77,27 @@
             Reads a QR code from the specified image.
             </summary>
             <param name="Image">The target image.</param>
-            <param name="StripTrailingNullBytes">Determines if the trailing null bytes are removed, this can yield a file artificially bigger (by a few bytes, depends on the file size) if disabled, but can (in rare occasions) corrupt files if enabled.</param>
+            <param name="StripEndEOSBytes">Determines if the trailing null bytes are removed, this can yield a file artificially bigger (by a few bytes, depends on the file size) if disabled, but can (in rare occasions) corrupt files if enabled.</param>
+            <returns>The read byte array.</returns>
+        </member>
+        <member name="T:PowerQR.Text">
+            <summary>
+            The class used to read and write QR texts.
+            </summary>
+        </member>
+        <member name="M:PowerQR.Text.Generate(System.Byte[],System.Boolean)">
+            <summary>
+            Generates a string containing all the bytes/byte values from a byte array.
+            </summary>
+            <param name="Bytes">The target byte array.</param>
+            <param name="NumericalValues">Should the string be generated using numerical values from 0 to 255?</param>
+            <returns>The generated string.</returns>
+        </member>
+        <member name="M:PowerQR.Text.Read(System.String)">
+            <summary>
+            Reads a QR code from the specified text.
+            </summary>
+            <param name="Text">The target text.</param>
             <returns>The read byte array.</returns>
         </member>
     </members>

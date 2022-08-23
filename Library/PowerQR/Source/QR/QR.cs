@@ -64,10 +64,10 @@ namespace PowerQR
         /// Reads a QR code from the specified image.
         /// </summary>
         /// <param name="Image">The target image.</param>
-        /// <param name="StripTrailingNullBytes">Determines if the trailing null bytes are removed, this can yield a file artificially bigger (by a few bytes, depends on the file size) if disabled, but can (in rare occasions) corrupt files if enabled.</param>
+        /// <param name="StripEndEOSBytes">Determines if the trailing null bytes are removed, this can yield a file artificially bigger (by a few bytes, depends on the file size) if disabled, but can (in rare occasions) corrupt files if enabled.</param>
         /// <returns>The read byte array.</returns>
         #endregion
-        public static Byte[] Read(Image Image, bool StripTrailingNullBytes)
+        public static Byte[] Read(Image Image, bool StripEndEOSBytes)
         {
             // Define 2 buffers.
             List<Byte> TemporaryByffer = new List<byte>();
@@ -82,8 +82,8 @@ namespace PowerQR
                 }
             }
 
-            // Strip the trailing null bytes.
-            if (StripTrailingNullBytes) {
+            // Strip the trailing null bytes / end of string characters introduced by the image generation system.
+            if (StripEndEOSBytes) {
                 Output = TemporaryByffer.TakeWhile((V, Index) => TemporaryByffer.Skip(Index).Any(W => W != 0x00)).ToList();
             }
 
