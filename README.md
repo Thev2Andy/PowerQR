@@ -4,7 +4,7 @@ PowerQR is an image data storage system, and can encode an unlimited amount of b
 # Features
 * Generate with one function.
 ```cs
-Text.Generate(Bytes, NumericalValues)
+Text.Generate(Bytes, NumericalValues);
 QR.Generate(Bytes);
 ```
 
