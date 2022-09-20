@@ -1,5 +1,5 @@
 # PowerQR
-PowerQR is an image data storage system, and can encode an unlimited amount of bytes in an image, *typically* compressing it in the process as an image.
+PowerQR is a data storage / encoding system, and can encode an unlimited amount of bytes in an image / text.
 
 # Features
 * Generate with one function.
@@ -14,7 +14,7 @@ Text.Read(Text);
 QR.Read(Image);
 ```
 
-## Here's the entire bee movie script encoded in an image.
+## Here's the entire bee movie script encoded as an image.
 ![Bee Movie Script](https://user-images.githubusercontent.com/85254326/186011130-dee93bce-7566-490a-949d-794500084336.png)
 
 ### And here's the beginning of it encoded as numerical text.
