@@ -70,7 +70,7 @@ namespace PowerQR
         public static Byte[] Read(Image Image, bool StripEndEOSBytes)
         {
             // Define 2 buffers.
-            List<Byte> TemporaryByffer = new List<byte>();
+            List<Byte> TemporaryBuffer = new List<byte>();
             List<Byte> Output = new List<Byte>();
 
             // Read the image.
@@ -78,17 +78,17 @@ namespace PowerQR
             {
                 for (int X = 0; X < Image.Size.X; X++)
                 {
-                    TemporaryByffer.Add(Image.Pixels[X, Y].Byte);
+                    TemporaryBuffer.Add(Image.Pixels[X, Y].Byte);
                 }
             }
 
             // Strip the trailing null bytes / end of string characters introduced by the image generation system.
             if (StripEndEOSBytes) {
-                Output = TemporaryByffer.TakeWhile((V, Index) => TemporaryByffer.Skip(Index).Any(W => W != 0x00)).ToList();
+                Output = TemporaryBuffer.TakeWhile((V, Index) => TemporaryBuffer.Skip(Index).Any(W => W != 0x00)).ToList();
             }
 
             else {
-                Output = TemporaryByffer;
+                Output = TemporaryBuffer;
             }
 
             return Output.ToArray();
